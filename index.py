@@ -18,10 +18,10 @@ while option !="0":
     #recebe as opções
     option =  input("Escolha a opção:")  
 
-if option =="1":
-    register(name_password_users)
-elif option =="2":
-    login(name_password_users)
+    if option =="1":
+        register(name_password_users)
+    elif option =="2":
+        login(name_password_users)
 
 
   
