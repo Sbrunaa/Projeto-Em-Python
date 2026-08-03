@@ -13,7 +13,7 @@ while option !="0":
     print("    Digite 1 - Cadastro.")
     print("    Digite 2 - Login.")
     print("    Digite 0 - Sair.")
-    print()
+    print("-------------------------------------------------------")
 
     #recebe as opções
     option =  input("Escolha a opção:")  

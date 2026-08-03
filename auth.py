@@ -2,17 +2,23 @@ def register(name_password_users):
     new_user = input("User:").strip()
 
     #o while se repetir até que seja inserido um usuario que não exixte ainda e não esteja vazio
-    while new_user == "" or new_user in name_password_users:
+    while new_user == "" or new_user in name_password_users or not new_user.isalnum():
         if new_user =="":
+            print()
             print("O usuario não pode ficar em branco!")
+        elif not new_user.isalnum():
+            print()
+            print("O usuario deve conter apenas letras e numeros!")
         else:
+            print()
             print("Usuario já exixte!")
 
+        print()
         new_user = input("User:").strip()
 
         #valida a senha , verificando se nao esta vazia
-        new_password = input("Password:").strip()
-    while new_password == "":
+    new_password = input("Password:").strip()
+    while new_password == " ":
         print("A senha não pode ficar em branco!")
         new_password = input("Password:").strip()
 
