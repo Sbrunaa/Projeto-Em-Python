@@ -4,26 +4,26 @@ def register(name_password_users):
     #o while se repetir até que seja inserido um usuario que não exixte ainda e não esteja vazio
     while new_user == "" or new_user in name_password_users or not new_user.isalnum():
         if new_user =="":
-            print()
-            print("O usuario não pode ficar em branco!")
+            print("\nO usuario não pode ficar em branco!")
         elif not new_user.isalnum():
-            print()
-            print("O usuario deve conter apenas letras e numeros!")
+            print("\nO usuario deve conter apenas letras e numeros!")
         else:
-            print()
-            print("Usuario já exixte!")
+            print("\nTente novamente!")
 
         print()
         new_user = input("User:").strip()
 
         #valida a senha , verificando se nao esta vazia
     new_password = input("Password:").strip()
-    while new_password == " ":
+    while new_password == "":
         print("A senha não pode ficar em branco!")
         new_password = input("Password:").strip()
 
         #cria o usuario depois das validações  
     name_password_users[new_user] = new_password
+
+    with open("users.txt", "a", encoding="utf-8") as arquivo:
+        arquivo.write(f"{new_user},{new_password}\n")
     print("Usuario cadastrado com sucesso!")
 
 def login(name_password_users):
